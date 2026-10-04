@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#14323B">
 <title>T2 Rue Brescon – Guide de séjour – L'Azur Provençal</title>
-<meta name="description" content="Guide de séjour du T2 Rue Brescon, quartier de l'Île à Martigues : arrivée, parkings, règles, bonnes adresses et contacts.">
+<meta name="description" content="Guide de séjour T2 Rue Brescon, Quartier de l'Île, Martigues : arrivée, stationnement, règles, bonnes adresses et contacts.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&display=swap" rel="stylesheet">
@@ -29,7 +29,7 @@ a{color:inherit}
 
 /* ---------- Ouverture : les volets ---------- */
 .hero{position:relative;height:100svh;min-height:560px;overflow:hidden;color:#fff;background:var(--encre);perspective:1600px}
-.hero-photo{position:absolute;inset:0;background:url('DSC08744.jpeg') center 35%/cover;transform:scale(1.12);animation:respire 2.6s var(--ease) .5s forwards}
+.hero-photo{position:absolute;inset:0;background-size:cover;background-position:var(--cadre,center 35%);transform:scale(1.12);animation:respire 2.6s var(--ease) .5s forwards}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,50,59,.15) 0%,rgba(20,50,59,0) 35%,rgba(20,50,59,.85) 100%)}
 .volet{position:absolute;top:0;bottom:0;width:50.5%;z-index:3;
   background:
@@ -213,12 +213,47 @@ footer strong{display:block;color:#fff;font-size:16px;margin-bottom:2px}
   .hero-photo,.hero-txt .wrap>*{animation:none;opacity:1;transform:none}
   *,*::before,*::after{transition-duration:.01ms!important}
 }
+
+/* ---------- Ajouts multi-guides ---------- */
+#wifi{--teinte:#E4ECF0;--accent:#4C6A78;--titre:#34505D}
+.wifi{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.wifi-champ+.wifi-champ{margin-top:18px}
+.wifi-champ small{display:block;color:var(--doux);font-size:15px;margin-bottom:4px}
+.wifi-val{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.wifi-val code{font-family:inherit;font-size:22px;font-weight:650;letter-spacing:.01em;word-break:break-all;color:var(--encre)}
+.copier{display:inline-flex;align-items:center;gap:6px;border:0;cursor:pointer;font-family:inherit;font-weight:600;font-size:14px;padding:8px 12px;border-radius:99px;background:var(--teinte);color:var(--accent);transition:background .25s,color .25s,transform .2s var(--ease)}
+.copier:active{transform:scale(.95)}
+.copier.ok{background:var(--accent);color:#fff}
+.qr{width:168px;padding:12px;background:#fff;border-radius:var(--r-m);box-shadow:0 0 0 1px var(--trait)}
+.qr svg{display:block;width:100%;height:auto}
+.qr p{font-size:13px;color:var(--doux);text-align:center;margin-top:6px;line-height:1.3}
+.wifi-attente{font-size:18px;font-weight:600}
+.lieu-fixe{cursor:default}
+.lieu-fixe:hover{filter:none}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:99px;background:var(--teinte);font-weight:600;font-size:15px}
+.chip .i{width:18px;height:18px;color:var(--accent)}
+.notes{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.notes .pied{margin-top:0}
+.important{margin-top:16px;padding:14px 16px;border-radius:var(--r-m);background:#FFF1E8;color:#7A3412;font-size:15px;line-height:1.45}
+.important strong{display:block;margin-bottom:2px}
+.ramassage{margin-top:18px}
+.ramassage h4{font-size:15px;font-weight:600;color:var(--doux)}
+.ramassage .semaine span{background:var(--teinte)}
+.ramassage .semaine span.ouvert{background:var(--accent);color:#fff}
+.extra{margin-top:16px;padding-top:16px;border-top:1px solid var(--trait)}
+@media (max-width:560px){
+  .wifi{grid-template-columns:1fr}
+  .qr{width:200px;margin:0 auto}
+}
+.insecable{white-space:nowrap}
+
 </style>
 </head>
 <body>
 
 <header class="hero" id="accueil">
-  <div class="hero-photo" role="img" aria-label="Façades colorées du quartier de l'Île, à Martigues"></div>
+  <div class="hero-photo" role="img" aria-label="Photo du logement et de ses environs" style="background-image:url('DSC08744.jpeg')"></div>
   <div class="volet volet-g" aria-hidden="true"></div>
   <div class="volet volet-d" aria-hidden="true"></div>
   <div class="hero-txt">
@@ -261,7 +296,7 @@ footer strong{display:block;color:#fff;font-size:16px;margin-bottom:2px}
       <div class="adresse-txt">
         <p class="muted">Appartement T2</p>
         <p class="rue">17 Rue Brescon<br>13500 Martigues</p>
-        <span class="pied"><svg class="i i-s" viewBox="0 0 24 24" aria-hidden="true"><circle cx="13" cy="4" r="2"/><path d="m9 21 2-6 3 3v3M7 12l3-5 4 1 2 4M11 15l-1-5"/></svg> Accès exclusivement à pied</span><br>
+        <div class="notes"><span class="pied"><svg class="i i-s" viewBox="0 0 24 24" aria-hidden="true"><circle cx="13" cy="4" r="2"/><path d="m9 21 2-6 3 3v3M7 12l3-5 4 1 2 4M11 15l-1-5"/></svg> Accès exclusivement à pied</span></div>
         <a class="btn btn-encre" href="https://www.google.com/maps/dir/?api=1&destination=17%20Rue%20Brescon%2C%2013500%20Martigues" target="_blank" rel="noopener"><svg class="i i-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg> Ouvrir l'itinéraire</a>
       </div>
     </div>
@@ -294,6 +329,7 @@ footer strong{display:block;color:#fff;font-size:16px;margin-bottom:2px}
     </div>
   </section>
 
+
   <section id="logement">
     <h2>Le logement</h2>
     <p class="intro">Quelques règles simples pour un séjour agréable, pour vous comme pour les voisins.</p>
@@ -323,7 +359,7 @@ footer strong{display:block;color:#fff;font-size:16px;margin-bottom:2px}
       <p class="muted">Cochez au fur et à mesure, rien ne vous échappera.</p>
       <ul class="check" id="check">
         <li><label><input type="checkbox"><span class="case"><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg></span><span class="check-txt">Regrouper les serviettes et, si possible, les draps</span></label></li>
-        <li><label><input type="checkbox"><span class="case"><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg></span><span class="check-txt">Trier et jeter vos déchets au point de collecte</span></label></li>
+        <li><label><input type="checkbox"><span class="case"><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg></span><span class="check-txt">Trier et jeter vos déchets</span></label></li>
         <li><label><input type="checkbox"><span class="case"><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg></span><span class="check-txt">Signaler toute anomalie ou dommage</span></label></li>
         <li><label><input type="checkbox"><span class="case"><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg></span><span class="check-txt">Fermer portes et fenêtres en partant</span></label></li>
       </ul>
@@ -332,7 +368,7 @@ footer strong{display:block;color:#fff;font-size:16px;margin-bottom:2px}
 
     <div class="bloc">
       <div class="titre-ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13M10 11v6M14 11v6"/></svg><h3>Déchets et tri sélectif</h3></div>
-      <p class="muted">Séparez plastiques et cartons des ordures ménagères.</p>
+      <p class="muted">Séparez plastiques et cartons des ordures ménagères, et jetez-les dans les bacs prévus à cet effet.</p>
       <div class="lieux" style="margin-top:16px">
         <a class="lieu" href="https://www.google.com/maps/dir/?api=1&destination=9%20Quai%20Lucien%20Toulmond%2C%2013500%20Martigues" target="_blank" rel="noopener">
           <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
@@ -345,6 +381,8 @@ footer strong{display:block;color:#fff;font-size:16px;margin-bottom:2px}
           <span class="lieu-go">Itinéraire <svg class="i i-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
         </a>
       </div>
+      
+      
       <p class="merci">Merci de participer au respect du cadre de vie.</p>
     </div>
   </section>
@@ -356,10 +394,12 @@ footer strong{display:block;color:#fff;font-size:16px;margin-bottom:2px}
         <div class="ic-rond ic-ocre"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12c3-5 10-6 14 0-4 6-11 5-14 0Zm14 0 4-3v6l-4-3Z"/><circle cx="8" cy="11" r=".6"/></svg></div>
         <h3>Marché de Jonquières</h3>
         <p class="muted">Parking Général Leclerc, le jeudi et le dimanche matin.</p>
-        <div class="semaine" aria-label="Jours de marché : jeudi et dimanche">
+        <div class="semaine" aria-label="Jours de marché : jeudi, dimanche">
           <span>L</span><span>M</span><span>M</span><span class="ouvert">J</span><span>V</span><span>S</span><span class="ouvert">D</span>
         </div>
         <p class="horaire">De 8h00 à 13h00</p>
+        
+        
       </div>
       <div class="bloc">
         <div class="ic-rond ic-canal"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9 5 4h14l1 5M4 9v11h16V9M4 9h16M9 20v-6h6v6"/></svg></div>
@@ -439,7 +479,7 @@ footer strong{display:block;color:#fff;font-size:16px;margin-bottom:2px}
 
 <footer>
   <strong>L'Azur Provençal</strong>
-  Conciergerie à Martigues, Provence-Alpes-Côte d'Azur
+  Conciergerie, Martigues, Provence-Alpes-Côte d'Azur
 </footer>
 
 <script>
@@ -519,6 +559,22 @@ footer strong{display:block;color:#fff;font-size:16px;margin-bottom:2px}
   vue.observe(document.getElementById('adresses'));
   requestAnimationFrame(() => choisir(onglets[0]));
 })();
+
+// Copier le nom du réseau ou le mot de passe WiFi
+document.querySelectorAll('.copier').forEach(b => {
+  b.addEventListener('click', async () => {
+    const txt = b.dataset.copie;
+    try { await navigator.clipboard.writeText(txt); }
+    catch (e) {
+      const t = document.createElement('textarea'); t.value = txt; document.body.appendChild(t);
+      t.select(); try { document.execCommand('copy'); } catch (e2) {} t.remove();
+    }
+    const avant = b.querySelector('span').textContent;
+    b.classList.add('ok'); b.querySelector('span').textContent = 'Copié';
+    setTimeout(() => { b.classList.remove('ok'); b.querySelector('span').textContent = avant; }, 1800);
+  });
+});
+
 </script>
 </body>
 </html>
