@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T2 Rue Brescon - L'Azur Provençal - Guide de Séjour</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-orange: #E67E22;
+            --primary-yellow: #F39C12;
+            --primary-blue: #3498DB;
+            --text-dark: #2C3E50;
+            --text-light: #ECF0F1;
+            --bg-light: #FDFEFE;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--bg-light);
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 10px var(--shadow);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, var(--primary-orange), var(--primary-yellow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary-orange);
+        }
+
+        .hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                url('DSC08744.jpeg?v=2');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-top: 60px;
+}
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--primary-orange);
+            border-left: 5px solid var(--primary-yellow);
+            padding-left: 1rem;
+        }
+
+        .info-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px var(--shadow);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px var(--shadow);
+        }
+
+        .info-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .info-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .info-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-orange);
+            font-weight: bold;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .map-container {
+            margin: 2rem 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px var(--shadow);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, var(--primary-orange), var(--primary-yellow));
+            color: white;
+            padding: 3rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info p {
+            font-size: 1.2rem;
+            margin: 1rem 0;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 2px solid white;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            opacity: 0.8;
+        }
+
+        .contact-methods {
+            margin-top: 3rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+      .contact-method {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+       .contact-method strong {
+    display: block;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    width: 100%;
+}
+        .contact-method p {
+    text-align: center;
+    width: 100%;
+}
+
+.contact-method a {
+    word-break: break-all;
+}
+
+        .emergency-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .emergency-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px var(--shadow);
+            border-left: 4px solid var(--primary-orange);
+        }
+
+        .emergency-card h4 {
+            color: var(--primary-orange);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .emergency-card .number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+            margin: 0.5rem 0;
+        }
+
+        footer {
+            background: var(--text-dark);
+            color: var(--text-light);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .emoji {
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+        }
+
+        .parking-list {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+
+        .rules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .rule-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px var(--shadow);
+            text-align: center;
+        }
+
+        .rule-item .emoji {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+
+        .local-tip {
+            background: #fff3e0;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid var(--primary-orange);
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-methods {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">L'Azur Provençal</div>
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#acces">Accès</a></li>
+                <li><a href="#reglement">Règlement</a></li>
+                <li><a href="#conseils">Conseils Locaux</a></li>
+                <li><a href="#adresses">Bonnes Adresses</a></li>
+                <li><a href="#urgences">Urgences</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" id="accueil">
+        <div class="hero-content">
+            <h1>Bienvenue à L'Azur Provençal</h1>
+            <p>T2 Rue Brescon · Quartier de l'Île, Martigues</p>
+            <p>Votre guide digital pour un séjour parfait</p>
+            <div class="scroll-indicator">
+                <span style="color: white; font-size: 2rem;">↓</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="acces">
+        <h2>📍 Accès & Check-in</h2>
+        
+        <div class="info-card">
+            <h3><span class="emoji">🏠</span>Adresse </h3>
+            <p style="font-size: 1.2rem; font-weight: bold;">17 Rue Brescon, 13500 Martigues</p>
+            <p style="margin-top: 0.5rem;">T2 Rue Brescon – Quartier de l'Île</p>
+            <p style="margin-top: 1rem;"><strong>Accès :</strong> Exclusivement à pied</p>
+        </div>
+
+        <div class="info-card">
+            <h3><span class="emoji">🚗</span>Stationnement</h3>
+            <div class="parking-list">
+                <p><strong>Plusieurs parkings à proximité :</strong></p>
+                <ul style="margin-top: 1rem;">
+                    <li><strong>1er parking :</strong> Parking de la médiathèque</li>
+                    <li><strong>2ème parking :</strong> 1 Quai Lucien Toulmond</li>
+                    <li><strong>3ème parking :</strong> 18 Quai Kléber</li>
+                    <li><strong>4ème parking :</strong> 52 Quai Général Leclerc</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="info-card">
+                <h3><span class="emoji">🔑</span>Arrivée</h3>
+                <p style="font-size: 1.3rem; color: var(--primary-orange); font-weight: bold;">À partir de 15h00</p>
+                <p style="margin-top: 1rem;">Remise des clés en main propre</p>
+            </div>
+            <div class="info-card">
+                <h3><span class="emoji">👋</span>Départ</h3>
+                <p style="font-size: 1.3rem; color: var(--primary-orange); font-weight: bold;">Jusqu'à 11h00 maximum</p>
+                <p style="margin-top: 1rem;">Merci de nous confirmer vos horaires via Airbnb ou Booking</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="reglement">
+        <h2>📋 Règlement Intérieur</h2>
+        
+        <div class="rules-grid">
+            <div class="rule-item">
+                <span class="emoji">🚭</span>
+                <h4>Logement Non-Fumeur</h4>
+            </div>
+            <div class="rule-item">
+                <span class="emoji">🎉</span>
+                <h4>Pas de Soirées / Événements</h4>
+            </div>
+            <div class="rule-item">
+                <span class="emoji">🐾</span>
+                <h4>Animaux Non Autorisés</h4>
+            </div>
+            <div class="rule-item">
+                <span class="emoji">🤫</span>
+                <h4>Calme de 22h à 8h</h4>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;">Respect du voisinage</p>
+            </div>
+        </div>
+
+        <div class="info-card" style="margin-top: 2rem;">
+            <h3><span class="emoji">🔐</span>Sécurité</h3>
+            <ul>
+                <li>Logement équipé de détecteurs de fumée</li>
+                <li>Installations électriques conformes</li>
+                <li>Extincteur à disposition</li>
+                <li>Trousse de premiers secours</li>
+                <li>Numéros d'urgence affichés</li>
+                <li>Fenêtres et portes sécurisées</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="checkout">
+        <h2>🧹 Entretien & Check-out</h2>
+        
+        <div class="info-card">
+            <h3><span class="emoji">♻️</span>Déchets et Tri Sélectif</h3>
+            <p><strong>Plastiques et cartons :</strong> À séparer des ordures ménagères classiques</p>
+            <p><strong>Ordures ménagères :</strong> À jeter dans les bacs prévus à cet effet</p>
+            <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                <p><strong>📍 Points de collecte les plus proches :</strong></p>
+                <p style="margin-top: 0.5rem;">👉 Devant le restaurant Taj Mahal (9 Quai Lucien Toulmond)</p>
+                <p style="margin-top: 0.5rem;">👉 Ou Place de la Libération</p>
+            </div>
+            <p style="margin-top: 1rem; color: var(--primary-blue); font-style: italic;">Merci pour votre participation au respect du cadre de vie 🌿</p>
+        </div>
+
+        <div class="info-card">
+            <h3><span class="emoji">🏠</span>Utilisation des Équipements</h3>
+            <p>Merci d'utiliser les équipements du logement avec soin :</p>
+            <ul style="margin-top: 1rem;">
+                <li>Électroménager</li>
+                <li>TV</li>
+                <li>Chauffage / Climatisation</li>
+            </ul>
+            <p style="margin-top: 1rem;"><strong>Pour votre sécurité :</strong> Merci de toujours fermer portes et fenêtres en quittant les lieux.</p>
+        </div>
+
+        <div class="info-card">
+            <h3><span class="emoji">✅</span>Check-out</h3>
+            <ul>
+                <li>Regrouper les serviettes et, si possible, les draps</li>
+                <li>Signaler toute anomalie ou dommage</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="conseils">
+        <h2>💡 Conseils Locaux</h2>
+        
+        <div class="info-card">
+            <h3><span class="emoji">🛒</span>Marché de Jonquières</h3>
+            <div class="local-tip">
+                <p><strong>📍 Emplacement :</strong> Parking Général Leclerc</p>
+                <p style="margin-top: 0.5rem;"><strong>🗓️ Horaires :</strong></p>
+                <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+                    <li><strong>Jeudi matin :</strong> de 8h00 à 13h00</li>
+                    <li><strong>Dimanche matin :</strong> de 8h00 à 13h00</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <h3><span class="emoji">🏪</span>Commerces de Proximité</h3>
+            <p>Vous trouverez de nombreux commerces sur la <strong>rue de la République</strong>, située à seulement <strong>200 mètres</strong> du logement.</p>
+        </div>
+
+        <div class="info-card">
+            <h3><span class="emoji">🛒</span>Supermarché</h3>
+            <p>Pour faire vos courses sans prendre la voiture :</p>
+            <div class="local-tip">
+                <p><strong>Carrefour Contact</strong></p>
+                <p>📍 43 Boulevard du 14 Juillet, 13500 Martigues</p>
+                <p>🚶 5 minutes à pied du logement</p>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <h3><span class="emoji">🍹</span>Prendre un Verre</h3>
+            <p>Plusieurs options à proximité immédiate :</p>
+            <div class="local-tip" style="margin-top: 1rem;">
+                <p><strong>Place de la Libération</strong></p>
+                <p>🚶 200 mètres du logement</p>
+            </div>
+            <div class="local-tip">
+                <p><strong>Esplanade des Belges - Jonquières</strong></p>
+                <p>🚶 5 minutes à pied</p>
+            </div>
+        </div>
+
+        <div class="info-card" style="background: linear-gradient(135deg, #3498DB, #2980B9); color: white;">
+            <h3 style="color: white;"><span class="emoji">🗺️</span>Plus de Recommandations</h3>
+            <p>Vous trouverez plus de recommandations de restaurants et plages dans la section <strong>"Bonnes Adresses"</strong>, avec des cartes Google Maps personnalisées.</p>
+        </div>
+    </section>
+
+    <section id="adresses">
+        <h2>🍽️ Bonnes Adresses</h2>
+        
+        <div class="info-card">
+            <h3><span class="emoji">🍴</span>Restaurants Recommandés</h3>
+            <p>Retrouvez tous les meilleurs restaurants que nous vous recommandons pour découvrir Martigues (points rouges sur la carte).</p>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/d/u/0/embed?mid=12xFUF41_OXiT4AqFyEsFgGqVKRf2TLc&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <h3><span class="emoji">🏖️</span>Plages à Proximité</h3>
+            <p>Découvrez les plus belles plages de la région, à quelques minutes du logement.</p>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1xoamd_uq0rHkUJQyay1lhB2PeNYSowM&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="urgences">
+        <h2>🚨 Contacts d'Urgence</h2>
+        
+        <div class="emergency-grid">
+            <div class="emergency-card">
+                <h4>🚨 Urgences</h4>
+                <div class="number">112</div>
+                <p>Numéro européen pour toute situation grave (accident, malaise, danger…)</p>
+                <p style="margin-top: 0.5rem; font-weight: bold; color: var(--primary-orange);">Disponible 24h/24</p>
+            </div>
+
+            <div class="emergency-card">
+                <h4>🚒 Pompiers</h4>
+                <div class="number">18</div>
+                <p>Incendie, accident domestique, secours d'urgence</p>
+            </div>
+
+            <div class="emergency-card">
+                <h4>🚓 Police</h4>
+                <div class="number">17</div>
+                <p>Vol, agression, nuisance grave, trouble à l'ordre public</p>
+            </div>
+
+            <div class="emergency-card">
+                <h4>💊 Pharmacie de Garde</h4>
+                <p style="margin-top: 1rem;">Disponible via :</p>
+                <p style="margin-top: 0.5rem;"><a href="https://www.3237.fr" target="_blank" style="color: var(--primary-blue); font-weight: bold;">www.3237.fr</a></p>
+            </div>
+        </div>
+
+        <div class="info-card" style="margin-top: 2rem;">
+            <h3><span class="emoji">🏥</span>Hôpital le Plus Proche</h3>
+            <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 10px;">
+                <p style="font-size: 1.2rem; font-weight: bold; color: var(--primary-blue);">Centre Hospitalier de Martigues</p>
+                <p style="margin-top: 1rem;">📍 <strong>Adresse :</strong> Chemin de Paradis, 13500 Martigues</p>
+                <p style="margin-top: 1rem;">
+                    <a href="https://www.google.com/maps/place/Centre+Hospitalier+de+Martigues/@43.400918,5.059042,15z" 
+                       target="_blank" 
+                       style="color: var(--primary-orange); font-weight: bold; text-decoration: none; border-bottom: 2px solid var(--primary-orange);">
+                        📍 Voir sur Google Maps
+                    </a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>📞 Contact & Assistance</h2>
+        
+        <div class="contact-info">
+            <h3>Nous restons disponibles à chaque étape de votre séjour</h3>
+            <p>Pour toute question, demande particulière ou imprévu, vous pouvez nous contacter via les moyens ci-dessous.</p>
+            <p style="margin-top: 2rem;">Nous répondons toujours le plus rapidement possible.</p>
+            
+            <div class="contact-methods">
+                <div class="contact-method">
+                    <strong>📱 Téléphone</strong>
+                    <p><a href="tel:0778902554">07 78 90 25 54</a></p>
+                </div>
+                <div class="contact-method">
+                    <strong>📧 Email</strong>
+                    <p><a href="mailto:contact@lazurprovencal.com">contact@lazurprovencal.com</a></p>
+                </div>
+                <div class="contact-method">
+                    <strong>🏠 Airbnb</strong>
+                    <p>Via la messagerie Airbnb</p>
+                </div>
+                <div class="contact-method">
+                    <strong>🌐 Booking.com</strong>
+                    <p>Via la messagerie Booking</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 L'Azur Provençal - Conciergerie Immobilière</p>
+        <p style="margin-top: 0.5rem;">Martigues, Provence-Alpes-Côte d'Azur</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+
+</html>
+
+
+
+
