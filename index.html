@@ -1,711 +1,524 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>T2 Rue Brescon - L'Azur Provençal - Guide de Séjour</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-orange: #E67E22;
-            --primary-yellow: #F39C12;
-            --primary-blue: #3498DB;
-            --text-dark: #2C3E50;
-            --text-light: #ECF0F1;
-            --bg-light: #FDFEFE;
-            --shadow: rgba(0, 0, 0, 0.1);
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
-            background: var(--bg-light);
-        }
-
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.98);
-            box-shadow: 0 2px 10px var(--shadow);
-            z-index: 1000;
-            padding: 1rem 0;
-        }
-
-        nav .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        nav .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            background: linear-gradient(135deg, var(--primary-orange), var(--primary-yellow));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: var(--primary-orange);
-        }
-
-        .hero {
-    height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-                url('DSC08744.jpeg?v=2');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    margin-top: 60px;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#14323B">
+<title>T2 Rue Brescon – Guide de séjour – L'Azur Provençal</title>
+<meta name="description" content="Guide de séjour du T2 Rue Brescon, quartier de l'Île à Martigues : arrivée, parkings, règles, bonnes adresses et contacts.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --encre:#14323B; --canal:#0F6F7C; --ocre:#EFA20F; --brique:#C9461D;
+  --volet:#8FA3AD; --fond:#F2F5F5; --blanc:#FFFFFF; --trait:#D9E1E3; --doux:#5B7179;
+  --r-l:28px; --r-m:18px; --r-s:12px;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  color-scheme:light;
 }
-        .hero-content h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            animation: fadeInUp 1s ease;
-        }
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-variation-settings:'wdth' 100;
+  background:var(--fond);color:var(--encre);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ocre);outline-offset:3px;border-radius:6px}
+.i{width:22px;height:22px;flex:none;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.i-s{width:16px;height:16px}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
 
-        .hero-content p {
-            font-size: 1.5rem;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-            animation: fadeInUp 1s ease 0.2s both;
-        }
+/* ---------- Ouverture : les volets ---------- */
+.hero{position:relative;height:100svh;min-height:560px;overflow:hidden;color:#fff;background:var(--encre);perspective:1600px}
+.hero-photo{position:absolute;inset:0;background:url('DSC08744.jpeg') center 35%/cover;transform:scale(1.12);animation:respire 2.6s var(--ease) .5s forwards}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,50,59,.15) 0%,rgba(20,50,59,0) 35%,rgba(20,50,59,.85) 100%)}
+.volet{position:absolute;top:0;bottom:0;width:50.5%;z-index:3;
+  background:
+    repeating-linear-gradient(180deg,rgba(255,255,255,.10) 0 2px,transparent 2px 22px,rgba(0,0,0,.10) 22px 24px),
+    linear-gradient(90deg,#8299A4,#9AAEB7 50%,#8299A4);
+  box-shadow:inset 0 0 0 10px #7D939D, inset 0 0 0 12px rgba(0,0,0,.08)}
+.volet::before{content:"";position:absolute;left:18px;right:18px;top:22%;height:6px;background:#3C4A50;border-radius:3px;box-shadow:0 calc(56svh) 0 #3C4A50}
+.volet-g{left:0;transform-origin:left center;animation:ouvreG 1.8s cubic-bezier(.6,0,.25,1) .4s forwards}
+.volet-d{right:0;transform-origin:right center;animation:ouvreD 1.8s cubic-bezier(.6,0,.25,1) .4s forwards}
+@keyframes ouvreG{to{transform:rotateY(-104deg);visibility:hidden}}
+@keyframes ouvreD{to{transform:rotateY(104deg);visibility:hidden}}
+@keyframes respire{to{transform:scale(1)}}
+.hero-txt{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:0 20px calc(28px + env(safe-area-inset-bottom))}
+.hero-txt .wrap>*{opacity:0;transform:translateY(18px);animation:monte .9s var(--ease) forwards}
+.hero-txt .lieu-tag{animation-delay:1.55s}
+.hero-txt h1{animation-delay:1.65s}
+.hero-txt .hero-actions{animation-delay:1.85s}
+@keyframes monte{to{opacity:1;transform:none}}
+.lieu-tag{display:inline-flex;gap:8px;align-items:center;font-size:15px;font-weight:500;
+  background:rgba(255,255,255,.16);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:7px 14px 7px 10px;border-radius:99px}
+.hero h1{font-size:clamp(46px,13vw,104px);line-height:.92;font-weight:750;letter-spacing:-.035em;font-variation-settings:'wdth' 78;margin:16px 0 22px;max-width:9.5ch}
+.hero-actions{display:flex;gap:10px}
+.hero-actions .btn{flex:1;justify-content:center;max-width:220px;white-space:nowrap;padding:15px 14px}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:14px 20px;border-radius:99px;font-family:inherit;font-weight:600;font-size:16px;line-height:1;text-decoration:none;border:0;cursor:pointer;transition:transform .2s var(--ease),background .2s}
+.btn:active{transform:scale(.97)}
+.btn-ocre{background:var(--ocre);color:var(--encre)}
+.btn-verre{background:rgba(255,255,255,.16);color:#fff;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+/* ---------- Navigation ---------- */
+.nav{position:sticky;top:0;z-index:50;background:rgba(242,245,245,.88);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid var(--trait)}
+.nav-in{position:relative;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;max-width:760px;margin:0 auto;padding:10px 16px}
+.nav-in::-webkit-scrollbar{display:none}
+.nav a{position:relative;z-index:1;flex:none;padding:9px 15px;border-radius:99px;font-weight:550;font-size:15px;text-decoration:none;color:var(--doux);transition:color .3s}
+.nav a.actif{color:#fff}
+.nav-pastille{position:absolute;left:0;top:10px;height:calc(100% - 20px);border-radius:99px;background:var(--encre);transition:transform .45s var(--ease),width .45s var(--ease);will-change:transform}
 
-        section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+/* ---------- Sections ---------- */
+section{--teinte:var(--fond);--accent:var(--canal);--titre:var(--encre);padding:64px 0 56px;scroll-margin-top:58px;background:var(--teinte);box-shadow:0 0 0 100vmax var(--teinte);clip-path:inset(0 -100vmax)}
+#arrivee{--teinte:#E2F0F1;--accent:#0F6F7C;--titre:#0C5560}
+#logement{--teinte:#FDEADB;--accent:#C2622D;--titre:#9C4A1E}
+#depart{--teinte:#E3F0E5;--accent:#3A8456;--titre:#2C6842}
+#quartier{--teinte:#FCEFD2;--accent:#B0700A;--titre:#8A5600}
+#adresses{--teinte:#F9E2D9;--accent:#C9461D;--titre:#A0381A}
+#urgences{--teinte:#FFFFFF;--accent:#C9461D;--titre:var(--encre)}
+#urgences .urg a,#urgences .bloc{background:#FBEDE7}
+#contact{--teinte:#14323B;--titre:#FFFFFF}
+h2{color:var(--titre);font-size:clamp(34px,8vw,52px);line-height:1;font-weight:720;letter-spacing:-.03em;font-variation-settings:'wdth' 82;margin-bottom:22px}
+h3{font-size:20px;font-weight:650;letter-spacing:-.01em;margin-bottom:6px}
+.intro{color:var(--doux);max-width:58ch;margin:-8px 0 24px}
+.bloc{background:var(--blanc);border-radius:var(--r-l);padding:24px;margin-bottom:14px}
+.bloc p+p{margin-top:8px}
+.muted{color:var(--doux)}
 
-        section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: var(--primary-orange);
-            border-left: 5px solid var(--primary-yellow);
-            padding-left: 1rem;
-        }
+/* Billet arrivée / départ */
+.billet{display:grid;grid-template-columns:1fr auto 1fr;background:var(--encre);color:#fff;border-radius:var(--r-l);margin-bottom:14px;overflow:hidden}
+.billet>div{padding:22px 22px 24px}
+.billet small{display:block;font-size:15px;color:#A9C3C9;margin-bottom:4px}
+.billet strong{display:block;font-size:clamp(40px,11vw,58px);line-height:1;font-weight:700;letter-spacing:-.03em;font-variation-settings:'wdth' 80}
+.billet span{display:block;margin-top:10px;font-size:15px;color:#D6E3E6;line-height:1.4}
+.perfo{width:0;border-left:2px dashed rgba(255,255,255,.28);margin:16px 0;position:relative}
+.perfo::before,.perfo::after{content:"";position:absolute;left:-12px;width:22px;height:22px;border-radius:50%;background:var(--teinte)}
+.perfo::before{top:-28px}.perfo::after{bottom:-28px}
+.billet .depart strong{color:var(--ocre)}
 
-        .info-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px var(--shadow);
-            margin-bottom: 2rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+.adresse{display:grid;gap:0;background:var(--blanc);border-radius:var(--r-l);overflow:hidden;margin-bottom:14px}
+.adresse iframe{width:100%;height:230px;border:0;display:block;filter:saturate(.85)}
+.adresse-txt{padding:20px 24px 24px}
+.adresse-txt .rue{font-size:24px;font-weight:650;letter-spacing:-.015em;line-height:1.2}
+.pied{display:inline-flex;align-items:center;gap:8px;margin-top:12px;padding:7px 12px;border-radius:99px;background:#FDF1D8;color:#7A4E00;font-weight:550;font-size:15px}
+.adresse .btn{margin-top:16px}
+.btn-encre{background:var(--encre);color:#fff}
 
-        .info-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px var(--shadow);
-        }
+.lieux{display:grid;gap:8px}
+.lieu{display:flex;align-items:center;gap:14px;padding:15px 16px;border-radius:var(--r-m);background:var(--teinte);text-decoration:none;transition:background .2s}
+.lieu:hover{filter:brightness(.97)}
+.lieu .i{color:var(--accent)}
+.lieu-txt{flex:1;line-height:1.3}
+.lieu-txt strong{font-weight:600;display:block}
+.lieu-txt small{color:var(--doux);font-size:14px}
+.lieu-go{display:inline-flex;align-items:center;gap:4px;font-size:14px;font-weight:600;color:var(--accent);white-space:nowrap}
 
-        .info-card h3 {
-            color: var(--primary-blue);
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
+/* Règles */
+.regles{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}
+.regle{background:var(--blanc);border-radius:var(--r-m);padding:18px 12px;text-align:center;font-size:14px;font-weight:550;line-height:1.25}
+.regle .i{width:30px;height:30px;margin:0 auto 10px;display:block;color:var(--accent)}
+.regle small{display:block;font-weight:400;color:var(--doux);margin-top:3px}
+.liste{list-style:none;display:grid;gap:2px;margin-top:10px}
+.liste li{display:flex;gap:10px;align-items:baseline;padding:4px 0}
+.liste li::before{content:"";flex:none;width:7px;height:7px;border-radius:2px;background:var(--accent);transform:translateY(-2px)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.duo .bloc{margin:0}
+.duo{margin-bottom:14px}
+.titre-ic{display:flex;align-items:center;gap:10px;margin-bottom:4px}
+.titre-ic .i{color:var(--accent)}
 
-        .info-card ul {
-            list-style: none;
-            padding-left: 0;
-        }
+/* Check-list départ */
+.check{list-style:none;display:grid;gap:8px;margin-top:14px}
+.check label{display:flex;gap:14px;align-items:center;padding:14px 16px;border-radius:var(--r-m);background:var(--teinte);cursor:pointer;transition:background .25s}
+.check input{position:absolute;opacity:0;pointer-events:none}
+.case{flex:none;width:26px;height:26px;border-radius:8px;border:2px solid var(--volet);display:grid;place-items:center;transition:background .25s,border-color .25s,transform .25s var(--ease)}
+.case svg{width:16px;height:16px;fill:none;stroke:#fff;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:20;stroke-dashoffset:20;transition:stroke-dashoffset .35s var(--ease) .05s}
+.check input:checked+.case{background:var(--accent);border-color:var(--accent);transform:scale(1.08)}
+.check input:checked+.case svg{stroke-dashoffset:0}
+.check input:checked~.check-txt{color:var(--doux);text-decoration:line-through;text-decoration-color:rgba(91,113,121,.5)}
+.check input:focus-visible+.case{outline:3px solid var(--ocre);outline-offset:2px}
+.check label:has(input:checked){background:#D3E8D7}
+.progres{display:flex;align-items:center;gap:12px;margin-top:16px;font-size:15px;color:var(--doux)}
+.barre{flex:1;height:6px;border-radius:99px;background:var(--trait);overflow:hidden}
+.barre i{display:block;height:100%;width:0;background:var(--accent);border-radius:99px;transition:width .5s var(--ease)}
+.merci{margin-top:16px;color:var(--accent);font-weight:550}
 
-        .info-card li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-        }
+/* Quartier */
+.semaine{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin:16px 0 12px}
+.semaine span{aspect-ratio:1;max-height:52px;display:grid;place-items:center;border-radius:12px;background:var(--teinte);font-weight:600;color:#9AABB0;font-size:15px}
+.semaine span.ouvert{background:var(--ocre);color:var(--encre)}
+.horaire{font-size:15px;color:var(--doux)}
+.quartier{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.quartier .bloc{margin:0}
+.quartier .large{grid-column:1/-1}
+.ic-rond{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;margin-bottom:14px}
+.ic-rond .i{width:24px;height:24px}
+.ic-ocre{background:#FDF1D8;color:#A06800}
+.ic-canal{background:#DDF0F1;color:var(--canal)}
+.ic-brique{background:#FBE5DC;color:var(--brique)}
+.dist{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:14px;font-weight:600;color:var(--accent)}
+.dist .i{width:18px;height:18px}
+.mini{display:grid;gap:10px;margin-top:12px}
+.mini div{padding-left:12px;border-left:3px solid var(--ocre)}
+.mini small{display:block;color:var(--doux);font-size:14px}
 
-        .info-card li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--primary-orange);
-            font-weight: bold;
-        }
+/* Adresses : onglets */
+.onglets{display:inline-flex;position:relative;background:var(--blanc);border-radius:99px;padding:5px;margin-bottom:14px}
+.onglets button{position:relative;z-index:1;border:0;background:none;font-family:inherit;font-weight:600;font-size:16px;line-height:1;padding:12px 20px;border-radius:99px;color:var(--doux);cursor:pointer;transition:color .3s}
+.onglets button[aria-selected="true"]{color:#fff}
+.onglets .pastille{position:absolute;top:5px;bottom:5px;left:5px;border-radius:99px;background:var(--brique);transition:transform .45s var(--ease),width .45s var(--ease)}
+.carte{background:var(--blanc);border-radius:var(--r-l);overflow:hidden}
+.carte p{padding:18px 22px}
+.carte iframe{display:block;width:100%;height:420px;border:0}
+.carte[hidden]{display:none}
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
+/* Urgences */
+.urg{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+.urg a{display:block;text-decoration:none;background:var(--blanc);border-radius:var(--r-m);padding:16px 16px 18px;transition:transform .2s var(--ease)}
+.urg a:active{transform:scale(.97)}
+.urg strong{display:block;font-size:44px;line-height:1;font-weight:720;color:var(--brique);letter-spacing:-.03em;font-variation-settings:'wdth' 80}
+.urg span{display:block;font-weight:600;margin-top:8px}
+.urg small{display:block;color:var(--doux);font-size:13px;line-height:1.35;margin-top:4px}
 
-        .map-container {
-            margin: 2rem 0;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px var(--shadow);
-        }
+/* Contact */
+.contact{background:var(--ocre);color:var(--encre);border-radius:var(--r-l);padding:30px 24px;margin-bottom:14px}
+.contact h3{font-size:clamp(26px,6vw,34px);line-height:1.1;font-weight:700;letter-spacing:-.02em;font-variation-settings:'wdth' 85;max-width:16ch;margin-bottom:10px}
+.contact .actions{display:grid;gap:10px;margin-top:22px}
+.contact .btn{justify-content:space-between;padding:18px 20px;font-size:17px}
+.contact .btn span{display:flex;align-items:center;gap:10px}
+.contact .btn-blanc{background:rgba(255,255,255,.55);color:var(--encre)}
+.contact .plateformes{margin-top:18px;font-size:15px}
 
-        .map-container iframe {
-            width: 100%;
-            height: 500px;
-            border: none;
-        }
+footer{margin-top:-1px;padding:8px 20px calc(48px + env(safe-area-inset-bottom));text-align:center;color:#A9C3C9;font-size:14px;background:#14323B}
+footer strong{display:block;color:#fff;font-size:16px;margin-bottom:2px}
 
-        .contact-info {
-            background: linear-gradient(135deg, var(--primary-orange), var(--primary-yellow));
-            color: white;
-            padding: 3rem;
-            border-radius: 15px;
-            text-align: center;
-        }
-
-        .contact-info h3 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-info p {
-            font-size: 1.2rem;
-            margin: 1rem 0;
-        }
-
-        .contact-info a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            border-bottom: 2px solid white;
-            transition: opacity 0.3s ease;
-        }
-
-        .contact-info a:hover {
-            opacity: 0.8;
-        }
-
-        .contact-methods {
-            margin-top: 3rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            text-align: center;
-        }
-
-      .contact-method {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 1.5rem;
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+@media (min-width:900px){
+  .hero::after{background:linear-gradient(90deg,rgba(20,50,59,.78) 0%,rgba(20,50,59,.35) 45%,rgba(20,50,59,0) 70%),linear-gradient(180deg,rgba(20,50,59,0) 55%,rgba(20,50,59,.6) 100%)}
+  .hero-txt{padding-bottom:64px}
 }
-       .contact-method strong {
-    display: block;
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-    text-align: center;
-    width: 100%;
+@media (max-width:560px){
+  .lieu-go{font-size:0;gap:0;width:36px;height:36px;border-radius:50%;background:#fff;justify-content:center}
+  .lieu-go .i{width:18px;height:18px}
+  .regles{grid-template-columns:1fr 1fr}
+  .duo,.quartier{grid-template-columns:1fr}
+  .urg{grid-template-columns:1fr 1fr 1fr;gap:8px}
+  .urg a{padding:14px 12px 16px}
+  .urg strong{font-size:36px}
+  .urg small{display:none}
+  .billet>div{padding:20px 16px 22px}
+  .bloc{padding:20px}
+  .carte iframe{height:360px}
 }
-        .contact-method p {
-    text-align: center;
-    width: 100%;
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .volet{display:none}
+  .hero-photo,.hero-txt .wrap>*{animation:none;opacity:1;transform:none}
+  *,*::before,*::after{transition-duration:.01ms!important}
 }
-
-.contact-method a {
-    word-break: break-all;
-}
-
-        .emergency-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .emergency-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px var(--shadow);
-            border-left: 4px solid var(--primary-orange);
-        }
-
-        .emergency-card h4 {
-            color: var(--primary-orange);
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .emergency-card .number {
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--primary-blue);
-            margin: 0.5rem 0;
-        }
-
-        footer {
-            background: var(--text-dark);
-            color: var(--text-light);
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .emoji {
-            font-size: 1.5rem;
-            margin-right: 0.5rem;
-        }
-
-        .parking-list {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin: 1rem 0;
-        }
-
-        .rules-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .rule-item {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px var(--shadow);
-            text-align: center;
-        }
-
-        .rule-item .emoji {
-            font-size: 3rem;
-            display: block;
-            margin-bottom: 1rem;
-        }
-
-        .scroll-indicator {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0) translateX(-50%);
-            }
-            40% {
-                transform: translateY(-20px) translateX(-50%);
-            }
-            60% {
-                transform: translateY(-10px) translateX(-50%);
-            }
-        }
-
-        .local-tip {
-            background: #fff3e0;
-            padding: 1rem;
-            border-radius: 8px;
-            margin: 1rem 0;
-            border-left: 4px solid var(--primary-orange);
-        }
-
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-            }
-
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-content p {
-                font-size: 1.2rem;
-            }
-
-            section {
-                padding: 3rem 1rem;
-            }
-
-            section h2 {
-                font-size: 2rem;
-            }
-
-            .grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-methods {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+</style>
 </head>
 <body>
-    <nav>
-        <div class="container">
-            <div class="logo">L'Azur Provençal</div>
-            <ul>
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#acces">Accès</a></li>
-                <li><a href="#reglement">Règlement</a></li>
-                <li><a href="#conseils">Conseils Locaux</a></li>
-                <li><a href="#adresses">Bonnes Adresses</a></li>
-                <li><a href="#urgences">Urgences</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+
+<header class="hero" id="accueil">
+  <div class="hero-photo" role="img" aria-label="Façades colorées du quartier de l'Île, à Martigues"></div>
+  <div class="volet volet-g" aria-hidden="true"></div>
+  <div class="volet volet-d" aria-hidden="true"></div>
+  <div class="hero-txt">
+    <div class="wrap">
+      <span class="lieu-tag"><svg class="i i-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg> Quartier de l'Île, Martigues</span>
+      <h1>T2 Rue Brescon</h1>
+      <div class="hero-actions">
+        <a class="btn btn-ocre" href="https://www.google.com/maps/dir/?api=1&destination=17%20Rue%20Brescon%2C%2013500%20Martigues" target="_blank" rel="noopener"><svg class="i i-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg> Itinéraire</a>
+        <a class="btn btn-verre" href="tel:+33778902554"><svg class="i i-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg> Nous appeler</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="Sections du guide">
+  <div class="nav-in">
+    <span class="nav-pastille" aria-hidden="true"></span>
+    <a href="#arrivee">Arrivée</a>
+    <a href="#logement">Le logement</a>
+    <a href="#depart">Départ</a>
+    <a href="#quartier">Quartier</a>
+    <a href="#adresses">Bonnes adresses</a>
+    <a href="#urgences">Urgences</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <section id="arrivee">
+    <h2>Arrivée</h2>
+    <div class="billet">
+      <div><small>Arrivée</small><strong>15h00</strong><span>À partir de. Remise des clés en main propre.</span></div>
+      <div class="perfo" aria-hidden="true"></div>
+      <div class="depart"><small>Départ</small><strong>11h00</strong><span>Au plus tard. Confirmez vos horaires sur Airbnb ou Booking.</span></div>
+    </div>
+
+    <div class="adresse">
+      <iframe src="https://www.google.com/maps?q=17%20Rue%20Brescon%2C%2013500%20Martigues&output=embed" title="Carte : 17 Rue Brescon, 13500 Martigues" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div class="adresse-txt">
+        <p class="muted">Appartement T2</p>
+        <p class="rue">17 Rue Brescon<br>13500 Martigues</p>
+        <span class="pied"><svg class="i i-s" viewBox="0 0 24 24" aria-hidden="true"><circle cx="13" cy="4" r="2"/><path d="m9 21 2-6 3 3v3M7 12l3-5 4 1 2 4M11 15l-1-5"/></svg> Accès exclusivement à pied</span><br>
+        <a class="btn btn-encre" href="https://www.google.com/maps/dir/?api=1&destination=17%20Rue%20Brescon%2C%2013500%20Martigues" target="_blank" rel="noopener"><svg class="i i-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg> Ouvrir l'itinéraire</a>
+      </div>
+    </div>
+
+    <div class="bloc">
+      <div class="titre-ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 16V11l2-5h10l2 5v5M5 16h14M5 16v2M19 16v2"/><circle cx="8" cy="13" r="1"/><circle cx="16" cy="13" r="1"/></svg><h3>Où se garer</h3></div>
+      <p class="muted">Plusieurs parkings à proximité, terminez ensuite à pied.</p>
+      <div class="lieux" style="margin-top:16px">
+        <a class="lieu" href="https://www.google.com/maps/dir/?api=1&destination=M%C3%A9diath%C3%A8que%20Louis%20Aragon%2C%20Martigues" target="_blank" rel="noopener">
+          <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          <span class="lieu-txt"><strong>Parking de la médiathèque</strong></span>
+          <span class="lieu-go">Itinéraire <svg class="i i-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        </a>
+        <a class="lieu" href="https://www.google.com/maps/dir/?api=1&destination=1%20Quai%20Lucien%20Toulmond%2C%2013500%20Martigues" target="_blank" rel="noopener">
+          <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          <span class="lieu-txt"><strong>1 Quai Lucien Toulmond</strong></span>
+          <span class="lieu-go">Itinéraire <svg class="i i-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        </a>
+        <a class="lieu" href="https://www.google.com/maps/dir/?api=1&destination=18%20Quai%20Kl%C3%A9ber%2C%2013500%20Martigues" target="_blank" rel="noopener">
+          <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          <span class="lieu-txt"><strong>18 Quai Kléber</strong></span>
+          <span class="lieu-go">Itinéraire <svg class="i i-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        </a>
+        <a class="lieu" href="https://www.google.com/maps/dir/?api=1&destination=52%20Quai%20G%C3%A9n%C3%A9ral%20Leclerc%2C%2013500%20Martigues" target="_blank" rel="noopener">
+          <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          <span class="lieu-txt"><strong>52 Quai Général Leclerc</strong></span>
+          <span class="lieu-go">Itinéraire <svg class="i i-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="logement">
+    <h2>Le logement</h2>
+    <p class="intro">Quelques règles simples pour un séjour agréable, pour vous comme pour les voisins.</p>
+    <div class="regles">
+      <div class="regle"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 15h13v3H3zM19 15v3M17 8c0 2 2 2 2 4M21 8c0 2-2 2-2 4"/><path d="m3 3 18 18"/></svg>Non-fumeur</div>
+      <div class="regle"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20 9 7l8 8-13 5ZM14 4l1 2M19 9l2-1M17 3l-1 3"/></svg>Pas de soirées ni d'événements</div>
+      <div class="regle"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="9" r="1.6"/><circle cx="11" cy="6" r="1.6"/><circle cx="15" cy="6" r="1.6"/><circle cx="18" cy="10" r="1.6"/><path d="M8 17c0-3 2-5 4-5s4 2 4 5c0 2-2 2-4 2s-4 0-4-2Z"/><path d="m3 3 18 18"/></svg>Animaux non autorisés</div>
+      <div class="regle"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14A8 8 0 1 1 10 4a6.5 6.5 0 0 0 10 10Z"/></svg>Calme de 22h à 8h<small>Respect du voisinage</small></div>
+    </div>
+    <div class="duo">
+      <div class="bloc">
+        <div class="titre-ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3v5M15 3v5M6 8h12v3a6 6 0 0 1-12 0V8ZM12 17v4"/></svg><h3>Équipements</h3></div>
+        <p class="muted">Merci de les utiliser avec soin.</p>
+        <ul class="liste"><li>Électroménager</li><li>TV</li><li>Chauffage et climatisation</li></ul>
+      </div>
+      <div class="bloc">
+        <div class="titre-ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v6c0 4 3 7.5 7 9 4-1.5 7-5 7-9V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg><h3>Sécurité</h3></div>
+        <ul class="liste"><li>Détecteurs de fumée</li><li>Installations électriques conformes</li><li>Extincteur à disposition</li><li>Trousse de premiers secours</li><li>Numéros d'urgence affichés</li><li>Fenêtres et portes sécurisées</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="depart">
+    <h2>Avant de partir</h2>
+    <div class="bloc">
+      <h3>Votre check-list</h3>
+      <p class="muted">Cochez au fur et à mesure, rien ne vous échappera.</p>
+      <ul class="check" id="check">
+        <li><label><input type="checkbox"><span class="case"><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg></span><span class="check-txt">Regrouper les serviettes et, si possible, les draps</span></label></li>
+        <li><label><input type="checkbox"><span class="case"><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg></span><span class="check-txt">Trier et jeter vos déchets au point de collecte</span></label></li>
+        <li><label><input type="checkbox"><span class="case"><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg></span><span class="check-txt">Signaler toute anomalie ou dommage</span></label></li>
+        <li><label><input type="checkbox"><span class="case"><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg></span><span class="check-txt">Fermer portes et fenêtres en partant</span></label></li>
+      </ul>
+      <div class="progres"><div class="barre"><i id="barre"></i></div><span id="compte">0 sur 4</span></div>
+    </div>
+
+    <div class="bloc">
+      <div class="titre-ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13M10 11v6M14 11v6"/></svg><h3>Déchets et tri sélectif</h3></div>
+      <p class="muted">Séparez plastiques et cartons des ordures ménagères.</p>
+      <div class="lieux" style="margin-top:16px">
+        <a class="lieu" href="https://www.google.com/maps/dir/?api=1&destination=9%20Quai%20Lucien%20Toulmond%2C%2013500%20Martigues" target="_blank" rel="noopener">
+          <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          <span class="lieu-txt"><strong>Devant le restaurant Taj Mahal</strong><small>9 Quai Lucien Toulmond</small></span>
+          <span class="lieu-go">Itinéraire <svg class="i i-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        </a>
+        <a class="lieu" href="https://www.google.com/maps/dir/?api=1&destination=Place%20de%20la%20Lib%C3%A9ration%2C%2013500%20Martigues" target="_blank" rel="noopener">
+          <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          <span class="lieu-txt"><strong>Place de la Libération</strong></span>
+          <span class="lieu-go">Itinéraire <svg class="i i-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        </a>
+      </div>
+      <p class="merci">Merci de participer au respect du cadre de vie.</p>
+    </div>
+  </section>
+
+  <section id="quartier">
+    <h2>Le quartier</h2>
+    <div class="quartier">
+      <div class="bloc large">
+        <div class="ic-rond ic-ocre"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12c3-5 10-6 14 0-4 6-11 5-14 0Zm14 0 4-3v6l-4-3Z"/><circle cx="8" cy="11" r=".6"/></svg></div>
+        <h3>Marché de Jonquières</h3>
+        <p class="muted">Parking Général Leclerc, le jeudi et le dimanche matin.</p>
+        <div class="semaine" aria-label="Jours de marché : jeudi et dimanche">
+          <span>L</span><span>M</span><span>M</span><span class="ouvert">J</span><span>V</span><span>S</span><span class="ouvert">D</span>
         </div>
-    </nav>
-
-    <section class="hero" id="accueil">
-        <div class="hero-content">
-            <h1>Bienvenue à L'Azur Provençal</h1>
-            <p>T2 Rue Brescon · Quartier de l'Île, Martigues</p>
-            <p>Votre guide digital pour un séjour parfait</p>
-            <div class="scroll-indicator">
-                <span style="color: white; font-size: 2rem;">↓</span>
-            </div>
+        <p class="horaire">De 8h00 à 13h00</p>
+      </div>
+      <div class="bloc">
+        <div class="ic-rond ic-canal"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9 5 4h14l1 5M4 9v11h16V9M4 9h16M9 20v-6h6v6"/></svg></div>
+        <h3>Commerces</h3>
+        <p class="muted">De nombreuses boutiques rue de la République.</p>
+        <span class="dist"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="13" cy="4" r="2"/><path d="m9 21 2-6 3 3v3M7 12l3-5 4 1 2 4M11 15l-1-5"/></svg> 200 m</span>
+      </div>
+      <div class="bloc">
+        <div class="ic-rond ic-canal"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.5 11h10L20 7H6.5"/><circle cx="9" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/></svg></div>
+        <h3>Carrefour Contact</h3>
+        <p class="muted">43 Boulevard du 14 Juillet. Vos courses sans prendre la voiture.</p>
+        <span class="dist"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="13" cy="4" r="2"/><path d="m9 21 2-6 3 3v3M7 12l3-5 4 1 2 4M11 15l-1-5"/></svg> 5 min</span>
+      </div>
+      <div class="bloc large">
+        <div class="ic-rond ic-brique"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10l-1 7a4 4 0 0 1-8 0L7 3ZM12 14v6M8 21h8"/></svg></div>
+        <h3>Prendre un verre</h3>
+        <div class="mini">
+          <div><strong>Place de la Libération</strong><small>200 m à pied</small></div>
+          <div><strong>Esplanade des Belges, Jonquières</strong><small>5 minutes à pied</small></div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section id="acces">
-        <h2>📍 Accès & Check-in</h2>
-        
-        <div class="info-card">
-            <h3><span class="emoji">🏠</span>Adresse </h3>
-            <p style="font-size: 1.2rem; font-weight: bold;">17 Rue Brescon, 13500 Martigues</p>
-            <p style="margin-top: 0.5rem;">T2 Rue Brescon – Quartier de l'Île</p>
-            <p style="margin-top: 1rem;"><strong>Accès :</strong> Exclusivement à pied</p>
-        </div>
+  <section id="adresses">
+    <h2>Bonnes adresses</h2>
+    <div class="onglets" role="tablist" aria-label="Type d'adresses">
+      <span class="pastille" aria-hidden="true"></span>
+      <button role="tab" aria-selected="true" aria-controls="t-resto" id="b-resto">Restaurants</button>
+      <button role="tab" aria-selected="false" aria-controls="t-plage" id="b-plage" tabindex="-1">Plages</button>
+    </div>
+    <div class="carte" role="tabpanel" id="t-resto" aria-labelledby="b-resto">
+      <p class="muted">Nos restaurants préférés pour découvrir Martigues.</p>
+      <iframe data-src="https://www.google.com/maps/d/u/0/embed?mid=12xFUF41_OXiT4AqFyEsFgGqVKRf2TLc&ehbc=2E312F&noprof=1" title="Carte des restaurants recommandés" loading="lazy"></iframe>
+    </div>
+    <div class="carte" role="tabpanel" id="t-plage" aria-labelledby="b-plage" hidden>
+      <p class="muted">Les plus belles plages, à quelques minutes du logement.</p>
+      <iframe data-src="https://www.google.com/maps/d/u/0/embed?mid=1xoamd_uq0rHkUJQyay1lhB2PeNYSowM&ehbc=2E312F&noprof=1" title="Carte des plages à proximité" loading="lazy"></iframe>
+    </div>
+  </section>
 
-        <div class="info-card">
-            <h3><span class="emoji">🚗</span>Stationnement</h3>
-            <div class="parking-list">
-                <p><strong>Plusieurs parkings à proximité :</strong></p>
-                <ul style="margin-top: 1rem;">
-                    <li><strong>1er parking :</strong> Parking de la médiathèque</li>
-                    <li><strong>2ème parking :</strong> 1 Quai Lucien Toulmond</li>
-                    <li><strong>3ème parking :</strong> 18 Quai Kléber</li>
-                    <li><strong>4ème parking :</strong> 52 Quai Général Leclerc</li>
-                </ul>
-            </div>
-        </div>
+  <section id="urgences">
+    <h2>Urgences</h2>
+    <div class="urg">
+      <a href="tel:112"><strong>112</strong><span>Urgences</span><small>Accident, malaise, danger. 24h/24.</small></a>
+      <a href="tel:18"><strong>18</strong><span>Pompiers</span><small>Incendie, accident domestique.</small></a>
+      <a href="tel:17"><strong>17</strong><span>Police</span><small>Vol, agression, trouble grave.</small></a>
+    </div>
+    <div class="lieux bloc">
+      <a class="lieu" href="https://www.3237.fr" target="_blank" rel="noopener">
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 3h4v7h7v4h-7v7h-4v-7H3v-4h7z"/></svg>
+        <span class="lieu-txt"><strong>Pharmacie de garde</strong><small>Sur 3237.fr</small></span>
+        <span class="lieu-go">Trouver <svg class="i i-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+      </a>
+        <a class="lieu" href="https://www.google.com/maps/dir/?api=1&destination=Centre%20Hospitalier%20de%20Martigues" target="_blank" rel="noopener">
+          <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          <span class="lieu-txt"><strong>Centre hospitalier de Martigues</strong><small>Chemin de Paradis</small></span>
+          <span class="lieu-go">Itinéraire <svg class="i i-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        </a>
+    </div>
+  </section>
 
-        <div class="grid">
-            <div class="info-card">
-                <h3><span class="emoji">🔑</span>Arrivée</h3>
-                <p style="font-size: 1.3rem; color: var(--primary-orange); font-weight: bold;">À partir de 15h00</p>
-                <p style="margin-top: 1rem;">Remise des clés en main propre</p>
-            </div>
-            <div class="info-card">
-                <h3><span class="emoji">👋</span>Départ</h3>
-                <p style="font-size: 1.3rem; color: var(--primary-orange); font-weight: bold;">Jusqu'à 11h00 maximum</p>
-                <p style="margin-top: 1rem;">Merci de nous confirmer vos horaires via Airbnb ou Booking</p>
-            </div>
-        </div>
-    </section>
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact">
+      <h3>Une question, un imprévu ? Nous sommes là.</h3>
+      <p>Nous répondons le plus rapidement possible, à chaque étape de votre séjour.</p>
+      <div class="actions">
+        <a class="btn btn-encre" href="tel:+33778902554"><span><svg class="i i-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg> 07 78 90 25 54</span>Appeler</a>
+        <a class="btn btn-blanc" href="mailto:contact@lazurprovencal.com"><span><svg class="i i-s" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg> contact@lazurprovencal.com</span></a>
+      </div>
+      <p class="plateformes">Ou via la messagerie Airbnb ou Booking.com.</p>
+    </div>
+  </section>
 
+</main>
 
-    <section id="reglement">
-        <h2>📋 Règlement Intérieur</h2>
-        
-        <div class="rules-grid">
-            <div class="rule-item">
-                <span class="emoji">🚭</span>
-                <h4>Logement Non-Fumeur</h4>
-            </div>
-            <div class="rule-item">
-                <span class="emoji">🎉</span>
-                <h4>Pas de Soirées / Événements</h4>
-            </div>
-            <div class="rule-item">
-                <span class="emoji">🐾</span>
-                <h4>Animaux Non Autorisés</h4>
-            </div>
-            <div class="rule-item">
-                <span class="emoji">🤫</span>
-                <h4>Calme de 22h à 8h</h4>
-                <p style="margin-top: 0.5rem; font-size: 0.9rem;">Respect du voisinage</p>
-            </div>
-        </div>
+<footer>
+  <strong>L'Azur Provençal</strong>
+  Conciergerie à Martigues, Provence-Alpes-Côte d'Azur
+</footer>
 
-        <div class="info-card" style="margin-top: 2rem;">
-            <h3><span class="emoji">🔐</span>Sécurité</h3>
-            <ul>
-                <li>Logement équipé de détecteurs de fumée</li>
-                <li>Installations électriques conformes</li>
-                <li>Extincteur à disposition</li>
-                <li>Trousse de premiers secours</li>
-                <li>Numéros d'urgence affichés</li>
-                <li>Fenêtres et portes sécurisées</li>
-            </ul>
-        </div>
-    </section>
+<script>
+(() => {
+  // Navigation : la pastille suit la section lue
+  const nav = document.querySelector('.nav-in');
+  const pastille = nav.querySelector('.nav-pastille');
+  const liens = [...nav.querySelectorAll('a')];
+  const sections = liens.map(a => document.querySelector(a.getAttribute('href')));
+  let actif = null;
+  function placer(a) {
+    if (!a) { pastille.style.width = '0'; return; }
+    pastille.style.width = a.offsetWidth + 'px';
+    pastille.style.transform = 'translateX(' + a.offsetLeft + 'px)';
+  }
+  function majNav() {
+    const y = window.scrollY + 120;
+    let courant = null;
+    sections.forEach((s, i) => { if (s.offsetTop <= y) courant = liens[i]; });
+    if (courant !== actif) {
+      liens.forEach(l => l.classList.toggle('actif', l === courant));
+      if (courant) courant.setAttribute('aria-current', 'true');
+      if (actif) actif.removeAttribute('aria-current');
+      actif = courant;
+      placer(courant);
+      if (courant) nav.scrollTo({ left: courant.offsetLeft - 16, behavior: 'smooth' });
+    }
+  }
+  window.addEventListener('scroll', majNav, { passive: true });
+  window.addEventListener('resize', () => placer(actif));
+  majNav();
 
-    <section id="checkout">
-        <h2>🧹 Entretien & Check-out</h2>
-        
-        <div class="info-card">
-            <h3><span class="emoji">♻️</span>Déchets et Tri Sélectif</h3>
-            <p><strong>Plastiques et cartons :</strong> À séparer des ordures ménagères classiques</p>
-            <p><strong>Ordures ménagères :</strong> À jeter dans les bacs prévus à cet effet</p>
-            <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
-                <p><strong>📍 Points de collecte les plus proches :</strong></p>
-                <p style="margin-top: 0.5rem;">👉 Devant le restaurant Taj Mahal (9 Quai Lucien Toulmond)</p>
-                <p style="margin-top: 0.5rem;">👉 Ou Place de la Libération</p>
-            </div>
-            <p style="margin-top: 1rem; color: var(--primary-blue); font-style: italic;">Merci pour votre participation au respect du cadre de vie 🌿</p>
-        </div>
+  // Check-list de départ, mémorisée sur l'appareil
+  const cle = 'checklist-' + location.pathname;
+  const cases = [...document.querySelectorAll('#check input')];
+  let etat = [];
+  try { etat = JSON.parse(localStorage.getItem(cle)) || []; } catch (e) {}
+  cases.forEach((c, i) => { c.checked = !!etat[i]; c.addEventListener('change', maj); });
+  function maj() {
+    const n = cases.filter(c => c.checked).length;
+    document.getElementById('barre').style.width = (n / cases.length * 100) + '%';
+    document.getElementById('compte').textContent = n === cases.length ? 'Tout est prêt, bon retour !' : n + ' sur ' + cases.length;
+    try { localStorage.setItem(cle, JSON.stringify(cases.map(c => c.checked))); } catch (e) {}
+  }
+  maj();
 
-        <div class="info-card">
-            <h3><span class="emoji">🏠</span>Utilisation des Équipements</h3>
-            <p>Merci d'utiliser les équipements du logement avec soin :</p>
-            <ul style="margin-top: 1rem;">
-                <li>Électroménager</li>
-                <li>TV</li>
-                <li>Chauffage / Climatisation</li>
-            </ul>
-            <p style="margin-top: 1rem;"><strong>Pour votre sécurité :</strong> Merci de toujours fermer portes et fenêtres en quittant les lieux.</p>
-        </div>
-
-        <div class="info-card">
-            <h3><span class="emoji">✅</span>Check-out</h3>
-            <ul>
-                <li>Regrouper les serviettes et, si possible, les draps</li>
-                <li>Signaler toute anomalie ou dommage</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="conseils">
-        <h2>💡 Conseils Locaux</h2>
-        
-        <div class="info-card">
-            <h3><span class="emoji">🛒</span>Marché de Jonquières</h3>
-            <div class="local-tip">
-                <p><strong>📍 Emplacement :</strong> Parking Général Leclerc</p>
-                <p style="margin-top: 0.5rem;"><strong>🗓️ Horaires :</strong></p>
-                <ul style="margin-top: 0.5rem; margin-left: 1rem;">
-                    <li><strong>Jeudi matin :</strong> de 8h00 à 13h00</li>
-                    <li><strong>Dimanche matin :</strong> de 8h00 à 13h00</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="info-card">
-            <h3><span class="emoji">🏪</span>Commerces de Proximité</h3>
-            <p>Vous trouverez de nombreux commerces sur la <strong>rue de la République</strong>, située à seulement <strong>200 mètres</strong> du logement.</p>
-        </div>
-
-        <div class="info-card">
-            <h3><span class="emoji">🛒</span>Supermarché</h3>
-            <p>Pour faire vos courses sans prendre la voiture :</p>
-            <div class="local-tip">
-                <p><strong>Carrefour Contact</strong></p>
-                <p>📍 43 Boulevard du 14 Juillet, 13500 Martigues</p>
-                <p>🚶 5 minutes à pied du logement</p>
-            </div>
-        </div>
-
-        <div class="info-card">
-            <h3><span class="emoji">🍹</span>Prendre un Verre</h3>
-            <p>Plusieurs options à proximité immédiate :</p>
-            <div class="local-tip" style="margin-top: 1rem;">
-                <p><strong>Place de la Libération</strong></p>
-                <p>🚶 200 mètres du logement</p>
-            </div>
-            <div class="local-tip">
-                <p><strong>Esplanade des Belges - Jonquières</strong></p>
-                <p>🚶 5 minutes à pied</p>
-            </div>
-        </div>
-
-        <div class="info-card" style="background: linear-gradient(135deg, #3498DB, #2980B9); color: white;">
-            <h3 style="color: white;"><span class="emoji">🗺️</span>Plus de Recommandations</h3>
-            <p>Vous trouverez plus de recommandations de restaurants et plages dans la section <strong>"Bonnes Adresses"</strong>, avec des cartes Google Maps personnalisées.</p>
-        </div>
-    </section>
-
-    <section id="adresses">
-        <h2>🍽️ Bonnes Adresses</h2>
-        
-        <div class="info-card">
-            <h3><span class="emoji">🍴</span>Restaurants Recommandés</h3>
-            <p>Retrouvez tous les meilleurs restaurants que nous vous recommandons pour découvrir Martigues (points rouges sur la carte).</p>
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/d/u/0/embed?mid=12xFUF41_OXiT4AqFyEsFgGqVKRf2TLc&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>
-            </div>
-        </div>
-
-        <div class="info-card">
-            <h3><span class="emoji">🏖️</span>Plages à Proximité</h3>
-            <p>Découvrez les plus belles plages de la région, à quelques minutes du logement.</p>
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1xoamd_uq0rHkUJQyay1lhB2PeNYSowM&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>
-            </div>
-        </div>
-    </section>
-
-    <section id="urgences">
-        <h2>🚨 Contacts d'Urgence</h2>
-        
-        <div class="emergency-grid">
-            <div class="emergency-card">
-                <h4>🚨 Urgences</h4>
-                <div class="number">112</div>
-                <p>Numéro européen pour toute situation grave (accident, malaise, danger…)</p>
-                <p style="margin-top: 0.5rem; font-weight: bold; color: var(--primary-orange);">Disponible 24h/24</p>
-            </div>
-
-            <div class="emergency-card">
-                <h4>🚒 Pompiers</h4>
-                <div class="number">18</div>
-                <p>Incendie, accident domestique, secours d'urgence</p>
-            </div>
-
-            <div class="emergency-card">
-                <h4>🚓 Police</h4>
-                <div class="number">17</div>
-                <p>Vol, agression, nuisance grave, trouble à l'ordre public</p>
-            </div>
-
-            <div class="emergency-card">
-                <h4>💊 Pharmacie de Garde</h4>
-                <p style="margin-top: 1rem;">Disponible via :</p>
-                <p style="margin-top: 0.5rem;"><a href="https://www.3237.fr" target="_blank" style="color: var(--primary-blue); font-weight: bold;">www.3237.fr</a></p>
-            </div>
-        </div>
-
-        <div class="info-card" style="margin-top: 2rem;">
-            <h3><span class="emoji">🏥</span>Hôpital le Plus Proche</h3>
-            <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 10px;">
-                <p style="font-size: 1.2rem; font-weight: bold; color: var(--primary-blue);">Centre Hospitalier de Martigues</p>
-                <p style="margin-top: 1rem;">📍 <strong>Adresse :</strong> Chemin de Paradis, 13500 Martigues</p>
-                <p style="margin-top: 1rem;">
-                    <a href="https://www.google.com/maps/place/Centre+Hospitalier+de+Martigues/@43.400918,5.059042,15z" 
-                       target="_blank" 
-                       style="color: var(--primary-orange); font-weight: bold; text-decoration: none; border-bottom: 2px solid var(--primary-orange);">
-                        📍 Voir sur Google Maps
-                    </a>
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>📞 Contact & Assistance</h2>
-        
-        <div class="contact-info">
-            <h3>Nous restons disponibles à chaque étape de votre séjour</h3>
-            <p>Pour toute question, demande particulière ou imprévu, vous pouvez nous contacter via les moyens ci-dessous.</p>
-            <p style="margin-top: 2rem;">Nous répondons toujours le plus rapidement possible.</p>
-            
-            <div class="contact-methods">
-                <div class="contact-method">
-                    <strong>📱 Téléphone</strong>
-                    <p><a href="tel:0778902554">07 78 90 25 54</a></p>
-                </div>
-                <div class="contact-method">
-                    <strong>📧 Email</strong>
-                    <p><a href="mailto:contact@lazurprovencal.com">contact@lazurprovencal.com</a></p>
-                </div>
-                <div class="contact-method">
-                    <strong>🏠 Airbnb</strong>
-                    <p>Via la messagerie Airbnb</p>
-                </div>
-                <div class="contact-method">
-                    <strong>🌐 Booking.com</strong>
-                    <p>Via la messagerie Booking</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 L'Azur Provençal - Conciergerie Immobilière</p>
-        <p style="margin-top: 0.5rem;">Martigues, Provence-Alpes-Côte d'Azur</p>
-    </footer>
-
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('section').forEach(section => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(20px)';
-            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(section);
-        });
-    </script>
+  // Onglets restaurants / plages, cartes chargées à la demande
+  const onglets = [...document.querySelectorAll('.onglets button')];
+  const pastilleO = document.querySelector('.onglets .pastille');
+  function charger(panneau) {
+    const f = panneau.querySelector('iframe[data-src]');
+    if (f) { f.src = f.dataset.src; f.removeAttribute('data-src'); }
+  }
+  function choisir(b) {
+    onglets.forEach(o => {
+      const on = o === b;
+      o.setAttribute('aria-selected', on);
+      o.tabIndex = on ? 0 : -1;
+      document.getElementById(o.getAttribute('aria-controls')).hidden = !on;
+    });
+    pastilleO.style.width = b.offsetWidth + 'px';
+    pastilleO.style.transform = 'translateX(' + (b.offsetLeft - 5) + 'px)';
+    charger(document.getElementById(b.getAttribute('aria-controls')));
+  }
+  onglets.forEach((b, i) => {
+    b.addEventListener('click', () => choisir(b));
+    b.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+        const n = onglets[(i + (e.key === 'ArrowRight' ? 1 : -1) + onglets.length) % onglets.length];
+        n.focus(); choisir(n);
+      }
+    });
+  });
+  const vue = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { choisir(onglets.find(o => o.getAttribute('aria-selected') === 'true')); vue.disconnect(); }
+  }), { rootMargin: '300px' });
+  vue.observe(document.getElementById('adresses'));
+  requestAnimationFrame(() => choisir(onglets[0]));
+})();
+</script>
 </body>
-
 </html>
-
-
-
-
